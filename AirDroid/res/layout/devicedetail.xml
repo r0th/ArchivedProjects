@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+	<TextView
+		android:id="@+id/deviceNameTextView"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:textSize="28dp"
+		android:gravity="center"
+		/>
+	
+	<Button
+	    android:id="@+id/resolveButton"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/resolveButtonLabel" />
+	
+	<TextView
+	    android:id="@+id/deviceInfoTextView"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:textSize="28dp"
+		android:gravity="center"
+		/>
+	
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="1200" height="600"
+					   creationComplete="startServer();">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.graphics.SolidColor;
+			
+			import net.roozy.simpledots.ClientDot;
+			import net.roozy.synapse.SynapseServer;
+			import net.roozy.synapse.core.SynapseRemoteClient;
+			import net.roozy.synapse.events.SynapseClientEvent;
+			
+			import spark.primitives.Ellipse;
+			
+			private var server:SynapseServer;
+			private var dots:ArrayCollection = new ArrayCollection();
+			private var pit:Sprite;
+			
+			private function startServer() : void
+			{
+				server = new SynapseServer(2461);
+				server.addEventListener(SynapseClientEvent.CLIENT_CONNECTED, onClientConnected);
+				server.addEventListener(SynapseClientEvent.CLIENT_DISCONNECTED, onClientDisconnected);
+				server.start();
+				
+				createNewPit();
+			}
+			
+			private function onClientConnected(event:SynapseClientEvent) : void
+			{
+				var dot:ClientDot = new ClientDot();
+				dot.client = SynapseRemoteClient(event.client);
+				dot.addEventListener("dotMoved", onDotMoved);
+				addElement(dot);
+				dots.addItem(dot);
+			}
+			
+			private function onClientDisconnected(event:SynapseClientEvent) : void
+			{
+				var dot:ClientDot;
+				for each(dot in dots)
+				{
+					if(dot.client == event.client)
+					{
+						removeElement(dot);
+						dots.removeItemAt(dots.getItemIndex(dot));
+						return;
+					}
+				}
+			}
+			
+			private function onDotMoved(event:Event) : void
+			{
+				var dot:ClientDot = ClientDot(event.currentTarget);
+				
+				if(dot.hitTestObject(pit))
+				{
+					dot.deaths++;
+					dot.client.sendVibrate();
+					createNewPit();
+				}
+			}
+			
+			private function createNewPit() : void
+			{
+				if(!pit)
+				{
+					pit = new Sprite();
+					pit.graphics.beginFill(0);
+					pit.graphics.drawCircle(0, 0, 100);
+					pit.graphics.endFill();
+					pitContainer.addChild(pit);
+				}
+				
+				pit.x = Math.random() * (screen.width - pit.width);
+				pit.y = Math.random() * (screen.height - pit.height);
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<mx:UIComponent
+		id="pitContainer"
+		/>
+	
+</s:WindowedApplication>

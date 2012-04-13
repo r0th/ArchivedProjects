@@ -1,0 +1,148 @@
+Synapse Remoting Library
+========================
+
+Synapse is a collection of APIs that allows mobile clients to connect to an AIR 2.0 application running as a server.
+Below are some simple examples for creating a server and connecting to the server with different clients.
+
+Right now simple messaging and device motion is supported.  The code is open source, so feel free to build your own data formats into the clients and server.
+
+Actionscript Server
+===================
+
+To add the Synapse library to your project, include SynapseLibrary.swc in your project's library path.
+
+	import net.roozy.synapse.SynapseServer;
+	import net.roozy.synapse.events.SynapseClientEvent;
+	import net.roozy.synapse.events.SynapseMessageEvent;
+	import net.roozy.synapse.events.SynapseMotionEvent;
+
+	private var server:SynapseServer;
+
+	private function init() : void
+	{
+		// Create the server
+		server = new SynapseServer();
+		server.port = 2461;
+		
+		// Add server event listeners
+		server.addEventListener(SynapseClientEvent.CLIENT_CONNECTED, onClientConnected, false, 0, true);
+		server.addEventListener(SynapseClientEvent.CLIENT_DISCONNECTED, onClientDisconnected, false, 0, true);
+		server.addEventListener(SynapseMessageEvent.MESSAGE_RECEIVED, onMessageReceived, false, 0, true);
+		server.addEventListener(SynapseMotionEvent.DEVICE_MOTION_RECEIVED, onMotionReceived, false, 0, true);
+		
+		// Start the server
+		server.start();
+	}
+
+	private function onClientConnected(event:SynapseClientEvent) : void
+	{
+		// Use event.client
+	}
+
+	private function onClientDisconnected(event:SynapseClientEvent) : void
+	{
+		// Use event.client
+	}
+
+	private function onMessageReceived(event:SynapseMessageEvent) : void
+	{
+		// Use event.message
+	}
+
+	private function onMotionReceived(event:SynapseMotionEvent) : void
+	{
+		// Use event.deviceMotion
+	}
+
+	private function sendToAll() : void
+	{
+		server.sendMessageToAll("Hey guys, I'm a message!");
+	}
+	
+iOS Client
+==========
+
+To use the iOS library in your project, first open SynapseClientLibrary.xcodeproj.  Drag the Classes/Synapse
+group into your Xcode project.  Choose to either copy the files to your project's directory, or link the files
+relative to your project.  Then, add the CFNetwork framework to your target.
+
+	- (void) viewDidLoad
+	{	
+		SYSynapseClient *demoClient = [[SYSynapseClient alloc] init];
+		demoClient.address = @"192.168.0.1";
+		demoClient.port = 2461;
+		demoClient.delegate = self;
+		[demoClient connect];
+
+		// Methods available to communicate with the server
+		//[demoClient sendMessage:@"Hey AIR, whats up?"];
+		//[demoClient startMotionUpdates];
+		//[demoClient stopMotionUpdates];
+	}
+
+	#pragma mark Client Delegate
+
+	- (void) client:(SYSynapseClient *)client didConnectWithName:(NSString *)name
+	{
+		// Connected
+	}
+
+	- (void) client:(SYSynapseClient *)client didReceiveMessage:(NSString *)message
+	{
+		// Received a message
+	}
+
+	- (void) client:(SYSynapseClient *)client didDisconnectWithName:(NSString *)name
+	{
+		// Disconnected
+	}
+	
+Actionscript Client
+===================
+
+To add the Synapse library to your project, include SynapseLibrary.swc in your project's library path.
+
+	import net.roozy.synapse.SynapseClient;
+	import net.roozy.synapse.events.SynapseClientEvent;
+	import net.roozy.synapse.events.SynapseMessageEvent;
+
+	private var client:SynapseClient;
+
+	private function connect() : void
+	{
+		client = new SynapseClient();
+		client.addEventListener(SynapseClientEvent.CLIENT_CONNECTED, onClientConnected);
+		client.addEventListener(SynapseClientEvent.CLIENT_DISCONNECTED, onClientDisconnected);
+		client.addEventListener(SynapseMessageEvent.MESSAGE_RECEIVED, onMessageReceived);
+		client.connect();
+	}
+
+	private function onClientConnected(event:SynapseClientEvent) : void
+	{
+		// The client's name is event.client.name
+	}
+
+	private function onClientDisconnected(event:SynapseClientEvent) : void
+	{
+		// Disconnected
+	}
+
+	private function onMessageReceived(event:SynapseMessageEvent) : void
+	{
+		// Use event.message
+	}
+
+	private function sendMessage() : void
+	{
+		client.sendMessage("Hey AIR, I'm an Android phone.");
+	}
+
+	private function startMotionUpdates() : void
+	{
+		client.startMotionUpdates();
+	}
+
+	private function stopMotionUpdates() : void
+	{
+		client.stopMotionUpdates();
+	}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="480" height="762">
+	
+	<fx:Script>
+		<![CDATA[
+			import net.roozy.synapse.SynapseClient;
+			import net.roozy.synapse.events.SynapseClientEvent;
+			import net.roozy.synapse.events.SynapseMessageEvent;
+			
+			private var client:SynapseClient;
+			
+			private function connect() : void
+			{
+				statusText.text = "Connecting";
+				
+				client = new SynapseClient(ipInput.text, uint(portInput.text));
+				client.addEventListener(SynapseClientEvent.CLIENT_CONNECTED, onClientConnected);
+				client.addEventListener(SynapseClientEvent.CLIENT_DISCONNECTED, onClientDisconnected);
+				client.addEventListener(SynapseMessageEvent.MESSAGE_RECEIVED, onMessageReceived);
+				client.connect();
+			}
+			
+			private function onClientConnected(event:SynapseClientEvent) : void
+			{
+				statusText.text = "Connected : " + event.client.name;
+			}
+			
+			private function onClientDisconnected(event:SynapseClientEvent) : void
+			{
+				statusText.text = "Disconnected";
+			}
+			
+			private function onMessageReceived(event:SynapseMessageEvent) : void
+			{
+				messageText.text = event.message;
+			}
+			
+			private function sendMessage() : void
+			{
+				client.sendMessage("Hey AIR, I'm an Android phone.");
+			}
+			
+			private function startMotionUpdates() : void
+			{
+				client.startMotionUpdates();
+			}
+			
+			private function stopMotionUpdates() : void
+			{
+				client.stopMotionUpdates();
+			}
+			
+			private function openTouchReceiver() : void
+			{
+				var receiver:TouchReceiver = new TouchReceiver();
+				receiver.client = client;
+				addElement(receiver);
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<s:TextInput
+		id="ipInput"
+		x="18" y="22"
+		width="202" height="54"
+		text="192.168.0.2"
+		fontSize="24"
+		/>
+	
+	<s:TextInput
+		id="statusText"
+		x="82" y="172"
+		width="304" height="54"
+		text="Disconnected"
+		fontSize="24"
+		textAlign="center"
+		enabled="false"
+		/>
+	
+	<s:TextInput
+		id="messageText"
+		x="82" y="358"
+		width="304" height="54"
+		fontSize="24"
+		textAlign="center"
+		enabled="false"
+		/>
+	
+	<s:Label
+		x="95" y="436"
+		width="286" height="32"
+		text="Motion"
+		fontSize="24"
+		textAlign="center"
+		/>
+	
+	<s:Button
+		x="84" y="472"
+		width="302" height="54"
+		label="Start motion updates"
+		fontSize="24"
+		click="startMotionUpdates();"
+		/>
+	
+	<s:Button
+		x="84" y="548"
+		width="302" height="54"
+		label="Stop motion updates"
+		fontSize="24"
+		click="stopMotionUpdates();"
+		/>
+	
+	<s:Button
+		x="84" y="658"
+		width="302" height="54"
+		label="Open touch receiver"
+		fontSize="24"
+		click="openTouchReceiver();"
+		/>
+	
+	<s:Label
+		x="95" y="246"
+		width="286" height="32"
+		text="Messaging"
+		fontSize="24"
+		textAlign="center"
+		/>
+	
+	<s:TextInput
+		id="portInput"
+		x="234" y="22"
+		width="76" height="54"
+		text="2460"
+		fontSize="24"
+		/>
+	
+	<s:Button
+		x="326" y="22"
+		width="132" height="54"
+		label="Connect"
+		fontSize="24"
+		click="connect();"
+		/>
+	
+	<s:Button
+		x="84" y="282"
+		width="302" height="54"
+		label="Send simple message"
+		fontSize="24"
+		click="sendMessage();"
+		/>
+	
+	<s:Label
+		x="95" y="136"
+		width="286" height="32"
+		text="Status"
+		fontSize="24"
+		textAlign="center"
+		/>
+	
+</s:Application>

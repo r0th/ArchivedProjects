@@ -1,0 +1,17 @@
+DevKit
+======
+
+DevKit is a collection of re-usable controls, utilities and extensions for iOS projects. The easiest way to include the files is to add /Library/DevKit to your Xcode project. Then include the following settings.
+
+Project Settings
+===================
+
+Other Linker Flags:
+-lxml2
+
+Frameworks:
+SystemConfiguration
+libz.1.2.3.dylib
+MobileCoreServices
+CFNetwork
+QuartzCore

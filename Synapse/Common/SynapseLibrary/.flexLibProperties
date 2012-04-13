@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" version="3">
+  <includeClasses>
+    <classEntry path="net.roozy.synapse.SynapseServer"/>
+    <classEntry path="net.roozy.synapse.core.SynapseRemoteClient"/>
+    <classEntry path="net.roozy.synapse.core.SynapseData"/>
+    <classEntry path="net.roozy.synapse.enum.SynapseDataTypeEnum"/>
+    <classEntry path="net.roozy.synapse.events.SynapseClientEvent"/>
+    <classEntry path="net.roozy.synapse.events.SynapseMessageEvent"/>
+    <classEntry path="net.roozy.synapse.events.SynapseMotionEvent"/>
+    <classEntry path="net.roozy.synapse.core.SynapseMotionData"/>
+    <classEntry path="net.roozy.synapse.SynapseClient"/>
+    <classEntry path="net.roozy.synapse.interfaces.ISynapseClient"/>
+    <classEntry path="net.roozy.synapse.core.SynapseTouchData"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

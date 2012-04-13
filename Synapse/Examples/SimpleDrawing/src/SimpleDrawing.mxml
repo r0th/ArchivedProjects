@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   creationComplete="startServer()"
+					   width="640" height="800">
+	
+	<fx:Script>
+		<![CDATA[
+			import flash.utils.setTimeout;
+			
+			import mx.controls.Alert;
+			import mx.graphics.SolidColor;
+			
+			import net.roozy.synapse.SynapseServer;
+			import net.roozy.synapse.events.SynapseTouchEvent;
+			
+			import spark.core.SpriteVisualElement;
+			import spark.primitives.Ellipse;
+			
+			private var server:SynapseServer;
+			private var canvases:Dictionary;
+			private var colors:Dictionary;
+			private var isDrawing:Dictionary;
+			
+			private function startServer() : void
+			{
+				canvases = new Dictionary();
+				colors = new Dictionary();
+				isDrawing = new Dictionary();
+				
+				server = new SynapseServer(2460);
+				server.addEventListener(SynapseTouchEvent.TOUCH_RECEIVED, onTouchReceived);
+				server.start();
+				portLabel.text = "Connect to " + server.port;
+			}
+			
+			private function onTouchReceived(event:SynapseTouchEvent) : void
+			{
+				var touchX:Number = this.width * event.touch.point.x;
+				var touchY:Number = this.height * event.touch.point.y;
+				
+				if(!canvases[event.client.name])
+				{
+					var canvas:SpriteVisualElement = new SpriteVisualElement();
+					canvas.width = width;
+					canvas.height = height;
+					addElementAt(canvas, 0);
+					canvases[event.client.name] = canvas;
+					colors[event.client.name] = Math.random() * 0x999999;
+				}
+				
+				drawCircle(touchX, touchY, SpriteVisualElement(canvases[event.client.name]), colors[event.client.name]);
+			}
+			
+			private function drawCircle(x:Number, y:Number, canvas:SpriteVisualElement, color:uint) : void
+			{
+				/*if(!isDrawing[canvas])
+				{
+					canvas.graphics.moveTo(x, y);
+					isDrawing[canvas] = true;
+					setTimeout(clearDrawing, 500, canvas);
+				}
+				else
+				{*/
+					canvas.graphics.lineStyle(2, color);
+					canvas.graphics.lineTo(x, y);
+				//}
+			}
+			
+			private function clearAll() : void
+			{
+				var canvas:SpriteVisualElement;
+				for each(canvas in canvases)
+				{
+					canvas.graphics.clear();
+				}
+			}
+			
+			private function clearDrawing(target:Object) : void
+			{
+				isDrawing[target] = false;
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:Label
+		id="portLabel"
+		horizontalCenter="0" top="3"
+		/>
+	
+	<s:Button
+		label="Clear"
+		top="3" right="3"
+		click="clearAll()"
+		/>
+		
+	
+</s:WindowedApplication>

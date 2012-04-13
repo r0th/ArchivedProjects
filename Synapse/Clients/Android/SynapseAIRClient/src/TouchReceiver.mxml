@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="480" height="762"
+		 backgroundColor="0xFFFFFF" backgroundAlpha="1"
+		 creationComplete="init();">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.core.IVisualElementContainer;
+			
+			import net.roozy.synapse.SynapseClient;
+			
+			public var client:SynapseClient;
+			
+			private function init() : void
+			{
+				addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown, false, 0, true);
+			}
+			
+			private function close() : void
+			{
+				IVisualElementContainer(this.parent).removeElement(this);
+			}
+			
+			private function onMouseDown(event:MouseEvent) : void
+			{
+				trace("sending : " + mouseX/width); 
+				if(client) client.sendTouch(new Point(mouseX/width, mouseY/height));
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<s:Button
+		top="5" right="5"
+		width="114" height="46"
+		label="Close"
+		click="close();"
+		 fontSize="24"/>
+	
+</s:BorderContainer>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   applicationComplete="init();"
+					   closing="server.stop();">
+	
+	<fx:Script>
+		<![CDATA[
+			import net.roozy.synapse.SynapseServer;
+			import net.roozy.synapse.core.SynapseRemoteClient;
+			import net.roozy.synapse.events.SynapseClientEvent;
+			import net.roozy.synapse.events.SynapseMessageEvent;
+			import net.roozy.synapse.events.SynapseMotionEvent;
+			import net.roozy.synapse.events.SynapseTouchEvent;
+			
+			private var server:SynapseServer;
+			
+			private function init() : void
+			{
+				server = new SynapseServer();
+				server.port = 2460;
+				server.addEventListener(SynapseClientEvent.CLIENT_CONNECTED, onClientConnected, false, 0, true);
+				server.addEventListener(SynapseClientEvent.CLIENT_DISCONNECTED, onClientDisconnected, false, 0, true);
+				server.addEventListener(SynapseMessageEvent.MESSAGE_RECEIVED, onMessageReceived, false, 0, true);
+				server.addEventListener(SynapseMotionEvent.DEVICE_MOTION_RECEIVED, onMotionReceived, false, 0, true);
+				server.addEventListener(SynapseTouchEvent.TOUCH_RECEIVED, onTouchReceived, false, 0, true);
+				server.start();
+				
+				textArea.text += "Started : " + server.address + ":" + server.port + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+			}
+			
+			private function onClientConnected(event:SynapseClientEvent) : void
+			{
+				textArea.text += "Connected : " + event.client.name + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+				
+				SynapseRemoteClient(event.client).sendVibrate();
+			}
+			
+			private function onClientDisconnected(event:SynapseClientEvent) : void
+			{
+				textArea.text += "Disconnected : " + event.client.name + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+			}
+			
+			private function onMessageReceived(event:SynapseMessageEvent) : void
+			{
+				textArea.text += "Data (" + event.client.name + ") : " + event.message + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+			}
+			
+			private function onMotionReceived(event:SynapseMotionEvent) : void
+			{
+				textArea.text += "X:" + event.deviceMotion.x + " Y: " + event.deviceMotion.y + " Z: " + event.deviceMotion.z + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+			}
+			
+			private function onTouchReceived(event:SynapseTouchEvent) : void
+			{
+				textArea.text += "Touch: X:" + event.touch.point.x + " Y: " + event.touch.point.y + String.fromCharCode(10);
+				textArea.verticalScrollPosition = textArea.maxVerticalScrollPosition;
+			}
+			
+			private function sendToAll() : void
+			{
+				server.sendMessageToAll("Hey guys, I'm a message!");
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:VerticalLayout />
+	</s:layout>
+	
+	<s:Button
+		label="Send Message To All"
+		click="sendToAll();"
+		/>
+	
+	<mx:TextArea
+		id="textArea"
+		width="100%" height="100%"
+		/>
+	
+</s:WindowedApplication>
