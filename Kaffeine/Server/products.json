@@ -1,0 +1,33 @@
+{
+    "categories":[
+        { "id":"surf", "name":"Surfing" },
+        { "id":"life", "name":"Lifestyle" }
+    ],
+	"products":[
+        { "id":"com.kaffeineapp.surf_01" },
+        { "id":"com.kaffeineapp.surf_02" },
+        { "id":"com.kaffeineapp.surf_03" },
+        { "id":"com.kaffeineapp.surf_04" },
+        { "id":"com.kaffeineapp.surf_05" },
+        { "id":"com.kaffeineapp.surf_06" },
+        { "id":"com.kaffeineapp.surf_07" },
+        { "id":"com.kaffeineapp.surf_08" },
+        { "id":"com.kaffeineapp.surf_09" },
+        { "id":"com.kaffeineapp.surf_10" },
+        { "id":"com.kaffeineapp.surf_11" },
+        { "id":"com.kaffeineapp.surf_12" },
+        { "id":"com.kaffeineapp.life_01" },
+        { "id":"com.kaffeineapp.life_02" },
+        { "id":"com.kaffeineapp.life_03" },
+        { "id":"com.kaffeineapp.life_04" },
+        { "id":"com.kaffeineapp.life_05" },
+        { "id":"com.kaffeineapp.life_06" },
+        { "id":"com.kaffeineapp.life_07" },
+        { "id":"com.kaffeineapp.life_08" },
+        { "id":"com.kaffeineapp.life_09" },
+        { "id":"com.kaffeineapp.life_10" },
+        { "id":"com.kaffeineapp.life_11" },
+        { "id":"com.kaffeineapp.life_12" },
+        { "id":"com.kaffeineapp.life_13" }
+    ]
+}

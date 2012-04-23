@@ -1,0 +1,5 @@
+Load categories: http://voxper.com/iphone/handlers/getAllCategoriesHandler.php
+Load photos: http://voxper.com/iphone/handlers/getCategoryDetailHandler.php?categoryId=4
+
+Product (useless) : http://voxper.com/iphone/handlers/getProductDetailHandler.php?productId=57
+All products, no categories: http://voxper.com/iphone/handlers/getAllMediaListHandler.php
