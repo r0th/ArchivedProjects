@@ -26,6 +26,11 @@
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         [_scrollView addSubview:_imageView];
+        
+        UIImageView *watermark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Watermark.png"]];
+        watermark.center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
+        [self addSubview:watermark];
+        [watermark release];
     }
     return self;
 }

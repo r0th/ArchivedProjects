@@ -15,6 +15,8 @@
 		1F287827144D19CA003826D6 /* KFCatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F287825144D19CA003826D6 /* KFCatalogViewController.m */; };
 		1F2DF198145DBE970099A889 /* KFLibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DF194145DBE970099A889 /* KFLibraryTableViewCell.m */; };
 		1F2DF199145DBE970099A889 /* KFLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DF195145DBE970099A889 /* KFLibraryViewController.m */; };
+		1F77E32D15E4477C0051EE72 /* Watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F77E32B15E4477C0051EE72 /* Watermark.png */; };
+		1F77E32E15E4477C0051EE72 /* Watermark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F77E32C15E4477C0051EE72 /* Watermark@2x.png */; };
 		1F90D6D2153651A000AF1CA8 /* KFFullscreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F90D6D1153651A000AF1CA8 /* KFFullscreenView.m */; };
 		1F9D775D153515F000EF113A /* BackgroundTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D773D153515F000EF113A /* BackgroundTexture.png */; };
 		1F9D775E153515F000EF113A /* BackgroundTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D773E153515F000EF113A /* BackgroundTexture@2x.png */; };
@@ -103,6 +105,8 @@
 		1F2DF195145DBE970099A889 /* KFLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFLibraryViewController.m; path = Classes/Cart/KFLibraryViewController.m; sourceTree = "<group>"; };
 		1F2DF196145DBE970099A889 /* KFLibraryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFLibraryTableViewCell.h; path = Classes/Cart/KFLibraryTableViewCell.h; sourceTree = "<group>"; };
 		1F2DF197145DBE970099A889 /* KFLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFLibraryViewController.h; path = Classes/Cart/KFLibraryViewController.h; sourceTree = "<group>"; };
+		1F77E32B15E4477C0051EE72 /* Watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watermark.png; sourceTree = "<group>"; };
+		1F77E32C15E4477C0051EE72 /* Watermark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermark@2x.png"; sourceTree = "<group>"; };
 		1F90D6D0153651A000AF1CA8 /* KFFullscreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFFullscreenView.h; path = Classes/Global/KFFullscreenView.h; sourceTree = "<group>"; };
 		1F90D6D1153651A000AF1CA8 /* KFFullscreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFFullscreenView.m; path = Classes/Global/KFFullscreenView.m; sourceTree = "<group>"; };
 		1F9D773D153515F000EF113A /* BackgroundTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundTexture.png; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 				1FCEF3871536662B005E20AE /* TabBarButton-Deselected@2x.png */,
 				1FCEF3881536662B005E20AE /* TabBarButton-Selected.png */,
 				1FCEF3891536662B005E20AE /* TabBarButton-Selected@2x.png */,
+				1F77E32B15E4477C0051EE72 /* Watermark.png */,
+				1F77E32C15E4477C0051EE72 /* Watermark@2x.png */,
 			);
 			path = "Images-2.0";
 			sourceTree = "<group>";
@@ -577,6 +583,8 @@
 				1FCEF38B1536662B005E20AE /* TabBarButton-Deselected@2x.png in Resources */,
 				1FCEF38C1536662B005E20AE /* TabBarButton-Selected.png in Resources */,
 				1FCEF38D1536662B005E20AE /* TabBarButton-Selected@2x.png in Resources */,
+				1F77E32D15E4477C0051EE72 /* Watermark.png in Resources */,
+				1F77E32E15E4477C0051EE72 /* Watermark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
