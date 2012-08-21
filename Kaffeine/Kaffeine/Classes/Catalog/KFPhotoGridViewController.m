@@ -9,7 +9,6 @@
 #import "KFPhotoGridViewController.h"
 #import "NSObject+GlobalViews.h"
 #import "KFPhotoGridButton.h"
-#import "KFPhotoDetailViewController.h"
 #import "UIFont+Custom.h"
 
 @interface KFPhotoGridViewController ()
@@ -106,7 +105,8 @@
 {
 	KFPhoto *photo = [_photos objectAtIndex:button.superview.tag];
 	
-	KFPhotoDetailViewController *detail = [[KFPhotoDetailViewController alloc] initWithPhoto:photo];
+	KFPhotoDetailContainerViewController *detail = [[KFPhotoDetailContainerViewController alloc] initWithPhoto:photo];
+    detail.delegate = self;
 	[self.navigationController pushViewController:detail animated:YES];
 	[detail release];
 }
@@ -143,6 +143,24 @@
 	if(xOffset != startX) yOffset += buttonHeight + yPadding;
 	
 	_scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, yOffset);
+}
+
+#pragma mark - Container Delegate
+
+- (KFPhoto *)photoNextFromPhoto:(KFPhoto *)photo
+{
+    int photoIndex = [_photos indexOfObject:photo];
+    if (photoIndex == _photos.count - 1) return nil;
+    
+    return [_photos objectAtIndex:photoIndex + 1];
+}
+
+- (KFPhoto *)photoPreviousToPhoto:(KFPhoto *)photo
+{
+    int photoIndex = [_photos indexOfObject:photo];
+    if (photoIndex == 0) return nil;
+    
+    return [_photos objectAtIndex:photoIndex - 1];
 }
 
 #pragma mark - Cleanup

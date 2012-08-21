@@ -24,8 +24,8 @@
 		1F9D7762153515F000EF113A /* Category-Surf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7742153515F000EF113A /* Category-Surf@2x.png */; };
 		1F9D7763153515F000EF113A /* Category-Travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7743153515F000EF113A /* Category-Travel.png */; };
 		1F9D7764153515F000EF113A /* Category-Travel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7744153515F000EF113A /* Category-Travel@2x.png */; };
-		1F9D7765153515F000EF113A /* Category-Water.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7745153515F000EF113A /* Category-Water.png */; };
-		1F9D7766153515F000EF113A /* Category-Water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7746153515F000EF113A /* Category-Water@2x.png */; };
+		1F9D7765153515F000EF113A /* Category-Bodyboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7745153515F000EF113A /* Category-Bodyboarding.png */; };
+		1F9D7766153515F000EF113A /* Category-BodyBoarding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7746153515F000EF113A /* Category-BodyBoarding@2x.png */; };
 		1F9D7767153515F000EF113A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7747153515F000EF113A /* Default.png */; };
 		1F9D7768153515F000EF113A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7748153515F000EF113A /* Default@2x.png */; };
 		1F9D7769153515F000EF113A /* Icon-About.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7749153515F000EF113A /* Icon-About.png */; };
@@ -66,6 +66,7 @@
 		1FED179C144D101900731982 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED178F144D101900731982 /* UIImageView+AFNetworking.m */; };
 		1FED179D144D101900731982 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED1792144D101900731982 /* JSONKit.m */; };
 		1FED17A1144D110000731982 /* KFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED17A0144D110000731982 /* KFRootViewController.m */; };
+		6E1B560E15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B560D15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m */; };
 		6E1E7554144F772D0020F6BB /* KFPhotoGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7553144F772D0020F6BB /* KFPhotoGridButton.m */; };
 		6E21E1101458660B00C43FD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E21E10F1458660B00C43FD2 /* StoreKit.framework */; };
 		6E21E1141458663900C43FD2 /* KFStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E21E1131458663900C43FD2 /* KFStoreManager.m */; };
@@ -112,8 +113,8 @@
 		1F9D7742153515F000EF113A /* Category-Surf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Surf@2x.png"; sourceTree = "<group>"; };
 		1F9D7743153515F000EF113A /* Category-Travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Travel.png"; sourceTree = "<group>"; };
 		1F9D7744153515F000EF113A /* Category-Travel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Travel@2x.png"; sourceTree = "<group>"; };
-		1F9D7745153515F000EF113A /* Category-Water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Water.png"; sourceTree = "<group>"; };
-		1F9D7746153515F000EF113A /* Category-Water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Water@2x.png"; sourceTree = "<group>"; };
+		1F9D7745153515F000EF113A /* Category-Bodyboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Bodyboarding.png"; sourceTree = "<group>"; };
+		1F9D7746153515F000EF113A /* Category-BodyBoarding@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-BodyBoarding@2x.png"; sourceTree = "<group>"; };
 		1F9D7747153515F000EF113A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1F9D7748153515F000EF113A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1F9D7749153515F000EF113A /* Icon-About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-About.png"; sourceTree = "<group>"; };
@@ -168,6 +169,8 @@
 		1FED1792144D101900731982 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1FED179F144D110000731982 /* KFRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFRootViewController.h; path = Classes/Global/KFRootViewController.h; sourceTree = "<group>"; };
 		1FED17A0144D110000731982 /* KFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFRootViewController.m; path = Classes/Global/KFRootViewController.m; sourceTree = "<group>"; };
+		6E1B560C15E42BA800C7F62B /* KFPhotoDetailContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFPhotoDetailContainerViewController.h; path = Classes/Catalog/KFPhotoDetailContainerViewController.h; sourceTree = "<group>"; };
+		6E1B560D15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFPhotoDetailContainerViewController.m; path = Classes/Catalog/KFPhotoDetailContainerViewController.m; sourceTree = "<group>"; };
 		6E1E7552144F772D0020F6BB /* KFPhotoGridButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFPhotoGridButton.h; path = Classes/Catalog/KFPhotoGridButton.h; sourceTree = "<group>"; };
 		6E1E7553144F772D0020F6BB /* KFPhotoGridButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFPhotoGridButton.m; path = Classes/Catalog/KFPhotoGridButton.m; sourceTree = "<group>"; };
 		6E21E10F1458660B00C43FD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -254,8 +257,8 @@
 				1F9D7742153515F000EF113A /* Category-Surf@2x.png */,
 				1F9D7743153515F000EF113A /* Category-Travel.png */,
 				1F9D7744153515F000EF113A /* Category-Travel@2x.png */,
-				1F9D7745153515F000EF113A /* Category-Water.png */,
-				1F9D7746153515F000EF113A /* Category-Water@2x.png */,
+				1F9D7745153515F000EF113A /* Category-Bodyboarding.png */,
+				1F9D7746153515F000EF113A /* Category-BodyBoarding@2x.png */,
 				1F9D7747153515F000EF113A /* Default.png */,
 				1F9D7748153515F000EF113A /* Default@2x.png */,
 				1F9D7749153515F000EF113A /* Icon-About.png */,
@@ -450,6 +453,8 @@
 				1F07313C144E712200ACB967 /* KFPhotoGridViewController.m */,
 				6E1E7552144F772D0020F6BB /* KFPhotoGridButton.h */,
 				6E1E7553144F772D0020F6BB /* KFPhotoGridButton.m */,
+				6E1B560C15E42BA800C7F62B /* KFPhotoDetailContainerViewController.h */,
+				6E1B560D15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m */,
 				6EE587CC144F882E0003FF84 /* KFPhotoDetailViewController.h */,
 				6EE587CD144F882E0003FF84 /* KFPhotoDetailViewController.m */,
 				6EE587CE144F882E0003FF84 /* KFPhotoDetailViewController.xib */,
@@ -543,8 +548,8 @@
 				1F9D7762153515F000EF113A /* Category-Surf@2x.png in Resources */,
 				1F9D7763153515F000EF113A /* Category-Travel.png in Resources */,
 				1F9D7764153515F000EF113A /* Category-Travel@2x.png in Resources */,
-				1F9D7765153515F000EF113A /* Category-Water.png in Resources */,
-				1F9D7766153515F000EF113A /* Category-Water@2x.png in Resources */,
+				1F9D7765153515F000EF113A /* Category-Bodyboarding.png in Resources */,
+				1F9D7766153515F000EF113A /* Category-BodyBoarding@2x.png in Resources */,
 				1F9D7767153515F000EF113A /* Default.png in Resources */,
 				1F9D7768153515F000EF113A /* Default@2x.png in Resources */,
 				1F9D7769153515F000EF113A /* Icon-About.png in Resources */,
@@ -613,6 +618,7 @@
 				1F2DF199145DBE970099A889 /* KFLibraryViewController.m in Sources */,
 				1F90D6D2153651A000AF1CA8 /* KFFullscreenView.m in Sources */,
 				1FCEF39115366659005E20AE /* KFTabBarController.m in Sources */,
+				6E1B560E15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

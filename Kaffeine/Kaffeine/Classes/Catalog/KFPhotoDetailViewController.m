@@ -36,6 +36,11 @@
 	return self;
 }
 
+- (KFPhoto *)photo
+{
+    return _photo;
+}
+
 - (void) viewDidLoad
 {	
 	[_photo getThumbnailImageWithHandler:^(UIImage *image){
@@ -44,14 +49,6 @@
 	}];
 	
 	self.view.backgroundColor = [UIColor clearColor];
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icon-Back.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backButton;
-    [backButton release];
-	
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icon-Cart.png"] style:UIBarButtonItemStylePlain target:self action:@selector(purchaseItem)];
-	self.navigationItem.rightBarButtonItem = addButton;
-	[addButton release];
     
     _titleLabel.text = _photo.product.localizedTitle;
     _priceLabel.text = [NSString stringWithFormat:@"$%.2f", [_photo.product.price floatValue]];

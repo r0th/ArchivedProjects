@@ -19,6 +19,9 @@
     IBOutlet UILabel *_descriptionLabel;
 }
 
-- (id) initWithPhoto:(KFPhoto *)photo;
+@property (nonatomic, readonly) KFPhoto *photo;
+
+- (id)initWithPhoto:(KFPhoto *)photo;
+- (void)purchaseItem;
 
 @end

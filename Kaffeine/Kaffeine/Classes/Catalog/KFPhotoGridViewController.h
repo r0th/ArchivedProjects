@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KFCategory.h"
 
-@interface KFPhotoGridViewController : UIViewController
+#import "KFCategory.h"
+#import "KFPhotoDetailContainerViewController.h"
+
+@interface KFPhotoGridViewController : UIViewController <KFPhotoDetailContainerViewControllerDelegate>
 
 - (id) initWithCategory:(KFCategory *)category;
 
