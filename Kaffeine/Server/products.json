@@ -2,7 +2,7 @@
     "categories":[
         { "id":"surf", "name":"Surfing" },
         { "id":"life", "name":"Lifestyle" },
-        { "id":"body", "name":"Bodyboarding"}
+        { "id":"BB", "name":"Bodyboarding"}
     ],
 	"products":[
         { "id":"com.kaffeineapp.surf_01" },
@@ -79,6 +79,21 @@
         { "id":"com.kaffeineapp.life_22" },
         { "id":"com.kaffeineapp.life_23" },
         { "id":"com.kaffeineapp.life_24" },
-        { "id":"com.kaffeineapp.life_25" }
+        { "id":"com.kaffeineapp.life_25" },
+        { "id":"com.kaffeineapp.BB_01" },
+        { "id":"com.kaffeineapp.BB_02" },
+        { "id":"com.kaffeineapp.BB_03" },
+        { "id":"com.kaffeineapp.BB_04" },
+        { "id":"com.kaffeineapp.BB_05" },
+        { "id":"com.kaffeineapp.BB_06" },
+        { "id":"com.kaffeineapp.BB_07" },
+        { "id":"com.kaffeineapp.BB_08" },
+        { "id":"com.kaffeineapp.BB_09" },
+        { "id":"com.kaffeineapp.BB_10" },
+        { "id":"com.kaffeineapp.BB_11" },
+        { "id":"com.kaffeineapp.BB_12" },
+        { "id":"com.kaffeineapp.BB_13" },
+        { "id":"com.kaffeineapp.BB_14" },
+        { "id":"com.kaffeineapp.BB_15" }
     ]
 }
