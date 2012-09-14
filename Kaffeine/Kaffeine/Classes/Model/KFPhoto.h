@@ -17,6 +17,7 @@
 @property (nonatomic, retain) SKProduct *product;
 
 - (void) getThumbnailImageWithHandler:(void (^)(UIImage *image))handler;
+- (void) getPreviewImageWithHandler:(void (^)(UIImage *image))handler;
 - (void) getFullImageWithHandler:(void (^)(UIImage *image))handler;
 
 @end

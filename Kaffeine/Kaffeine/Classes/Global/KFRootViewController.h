@@ -15,4 +15,6 @@
 
 - (void) showImage:(UIImage *)image fullscreenFromFrame:(CGRect)frame;
 
+- (void)didBecomeActive;
+
 @end

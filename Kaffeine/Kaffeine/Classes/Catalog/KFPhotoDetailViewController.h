@@ -17,6 +17,8 @@
     IBOutlet UILabel *_titleLabel;
     IBOutlet UILabel *_priceLabel;
     IBOutlet UILabel *_descriptionLabel;
+    
+    IBOutlet UIActivityIndicatorView *_activityIndicator;
 }
 
 @property (nonatomic, readonly) KFPhoto *photo;

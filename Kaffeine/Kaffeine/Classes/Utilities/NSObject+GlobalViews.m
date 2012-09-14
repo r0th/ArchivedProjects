@@ -32,6 +32,18 @@
 	[root hideLoadingView];
 }
 
+- (void)showLoadingViewWithMessage:(NSString *)message forced:(BOOL)forced
+{
+    KFRootViewController *root = [self rootViewController];
+	[root showLoadingViewWithMessage:message forced:forced];
+}
+
+- (void)hideLoadingViewForcedOpen
+{
+    KFRootViewController *root = [self rootViewController];
+	[root hideLoadingViewForcedOpen];
+}
+
 - (void) showImage:(UIImage *)image fullscreenFromFrame:(CGRect)frame
 {
     KFRootViewController *root = [self rootViewController];

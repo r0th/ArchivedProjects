@@ -14,6 +14,7 @@
 
 + (NSURL *) allCategoriesURL;
 + (NSURL *) thumbnailURLForPhoto:(KFPhoto *)photo;
++ (NSURL *) previewURLForPhoto:(KFPhoto *)photo;
 + (NSURL *) fullURLForPhoto:(KFPhoto *)photo;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface KFTabBarController : UIViewController
 
+- (void)reloadCategories;
+
 @end

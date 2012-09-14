@@ -59,7 +59,7 @@
 			KFStoreManager *manager = [KFStoreManager sharedManager];
 			[manager getProducts:productIDs withHandler:^(NSArray *results){
 				// Do nothing with products, they're cached in the store manager now
-				handler(_categories);
+                handler(_categories);
 			}];
 			
 			[productIDs release];

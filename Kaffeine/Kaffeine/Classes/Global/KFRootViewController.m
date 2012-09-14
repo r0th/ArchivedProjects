@@ -23,6 +23,7 @@
 	
 	UIView *_loadingView;
 	UILabel *_loadingLabel;
+    BOOL _loadingViewForcedOpen;
     
     KFFullscreenView *_fullscreenView;
     CGRect _returningFrame;
@@ -73,11 +74,25 @@
 
 - (void) hideLoadingView
 {
+    if (_loadingViewForcedOpen) return;
+    
 	[UIView animateWithDuration:0.5 animations:^{
 		_loadingView.alpha = 0.0;
 	} completion:^(BOOL finished){
 		[_loadingView removeFromSuperview];
 	}];
+}
+
+- (void)showLoadingViewWithMessage:(NSString *)message forced:(BOOL)forced
+{
+    _loadingViewForcedOpen = forced;
+    [self showLoadingViewWithMessage:message];
+}
+
+- (void)hideLoadingViewForcedOpen
+{
+    _loadingViewForcedOpen = NO;
+    [self hideLoadingView];
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
@@ -148,6 +163,11 @@
          
          self.view.userInteractionEnabled = YES;
      }];
+}
+
+- (void)didBecomeActive
+{
+    [_tabBarController reloadCategories];
 }
 
 - (void) dealloc

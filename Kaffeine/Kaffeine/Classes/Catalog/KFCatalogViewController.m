@@ -19,6 +19,7 @@
 @private
     NSArray *_categories;
     UIScrollView *_scrollView;
+    BOOL _loading;
 }
 
 - (void) refreshData;
@@ -39,20 +40,42 @@
 	_scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:_scrollView];
 	
-	if(!_categories)
+	if(!_categories && !_loading)
 	{
-		[self showLoadingViewWithMessage:@"Loading categories"];
+        _loading = YES;
+        
+		[self showLoadingViewWithMessage:@"Loading categories" forced:YES];
 		
 		KFAppModel *model = [KFAppModel sharedModel];
 		[model getCategoriesWithHandler:^(NSArray *results){
 			
-			[self hideLoadingView];
+            _loading = NO;
+            
+			[self hideLoadingViewForcedOpen];
 			[[KFStoreManager sharedManager] restorePreviousPurchases];
 			
 			_categories = [results retain];
             [self refreshData];
 		}];
 	}
+}
+
+- (void)tryReload
+{
+    if (_categories.count == 0 && !_loading)
+    {
+        [self showLoadingViewWithMessage:@"Loading categories" forced:YES];
+		
+		KFAppModel *model = [KFAppModel sharedModel];
+		[model getCategoriesWithHandler:^(NSArray *results){
+			
+			[self hideLoadingViewForcedOpen];
+			[[KFStoreManager sharedManager] restorePreviousPurchases];
+			
+			_categories = [results retain];
+            [self refreshData];
+		}];
+    }
 }
 
 #pragma mark - Grid View
