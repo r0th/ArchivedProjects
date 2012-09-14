@@ -42,8 +42,11 @@
 }
 
 - (void) viewDidLoad
-{	
-	[_photo getThumbnailImageWithHandler:^(UIImage *image){
+{
+    [_activityIndicator startAnimating];
+    
+	[_photo getPreviewImageWithHandler:^(UIImage *image){
+        [_activityIndicator stopAnimating];
         _image = [image retain];
 		_imageView.image = image;
 	}];
@@ -66,6 +69,8 @@
 
 - (void)showFullScreen
 {
+    if (!_imageView.image) return;
+    
     CGRect adjustedFrame = [self.view convertRect:_imageView.frame fromView:_imageView.superview];
     [self showImage:_imageView.image fullscreenFromFrame:adjustedFrame];
 }

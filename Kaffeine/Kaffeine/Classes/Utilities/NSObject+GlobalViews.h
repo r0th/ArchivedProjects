@@ -14,6 +14,9 @@
 - (void) showLoadingViewWithMessage:(NSString *)message;
 - (void) hideLoadingView;
 
+- (void)showLoadingViewWithMessage:(NSString *)message forced:(BOOL)forced;
+- (void)hideLoadingViewForcedOpen;
+
 - (void) showImage:(UIImage *)image fullscreenFromFrame:(CGRect)frame;
 
 @end

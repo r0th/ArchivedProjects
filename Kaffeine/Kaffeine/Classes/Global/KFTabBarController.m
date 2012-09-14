@@ -112,7 +112,12 @@
         _currentViewController.view.frame = CGRectMake(0, 0, 320, 416);
         [self.view insertSubview:_currentViewController.view atIndex:0];
     }
-    
+}
+
+- (void)reloadCategories
+{
+    KFCatalogViewController *catalog = (KFCatalogViewController *)[_catalogNavController.childViewControllers objectAtIndex:0];
+    [catalog tryReload];
 }
 
 - (void)dealloc

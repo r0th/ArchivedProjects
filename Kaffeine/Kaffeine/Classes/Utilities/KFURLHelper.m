@@ -19,6 +19,11 @@ static NSString *baseURL = @"http://www.kaffeineapp.com/content";
 
 + (NSURL *) thumbnailURLForPhoto:(KFPhoto *)photo
 {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"%@/images/%@_t.jpg", baseURL, photo.photoID]];
+}
+
++ (NSURL *) previewURLForPhoto:(KFPhoto *)photo
+{
 	return [NSURL URLWithString:[NSString stringWithFormat:@"%@/images/%@_thumb.jpg", baseURL, photo.photoID]];
 }
 

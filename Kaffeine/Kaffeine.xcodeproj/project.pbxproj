@@ -26,8 +26,8 @@
 		1F9D7762153515F000EF113A /* Category-Surf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7742153515F000EF113A /* Category-Surf@2x.png */; };
 		1F9D7763153515F000EF113A /* Category-Travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7743153515F000EF113A /* Category-Travel.png */; };
 		1F9D7764153515F000EF113A /* Category-Travel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7744153515F000EF113A /* Category-Travel@2x.png */; };
-		1F9D7765153515F000EF113A /* Category-BB.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7745153515F000EF113A /* Category-BB.png */; };
-		1F9D7766153515F000EF113A /* Category-BB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7746153515F000EF113A /* Category-BB@2x.png */; };
+		1F9D7765153515F000EF113A /* Category-Bb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7745153515F000EF113A /* Category-Bb.png */; };
+		1F9D7766153515F000EF113A /* Category-Bb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7746153515F000EF113A /* Category-Bb@2x.png */; };
 		1F9D7767153515F000EF113A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7747153515F000EF113A /* Default.png */; };
 		1F9D7768153515F000EF113A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7748153515F000EF113A /* Default@2x.png */; };
 		1F9D7769153515F000EF113A /* Icon-About.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D7749153515F000EF113A /* Icon-About.png */; };
@@ -117,8 +117,8 @@
 		1F9D7742153515F000EF113A /* Category-Surf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Surf@2x.png"; sourceTree = "<group>"; };
 		1F9D7743153515F000EF113A /* Category-Travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Travel.png"; sourceTree = "<group>"; };
 		1F9D7744153515F000EF113A /* Category-Travel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Travel@2x.png"; sourceTree = "<group>"; };
-		1F9D7745153515F000EF113A /* Category-BB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-BB.png"; sourceTree = "<group>"; };
-		1F9D7746153515F000EF113A /* Category-BB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-BB@2x.png"; sourceTree = "<group>"; };
+		1F9D7745153515F000EF113A /* Category-Bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Bb.png"; sourceTree = "<group>"; };
+		1F9D7746153515F000EF113A /* Category-Bb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-Bb@2x.png"; sourceTree = "<group>"; };
 		1F9D7747153515F000EF113A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1F9D7748153515F000EF113A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1F9D7749153515F000EF113A /* Icon-About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-About.png"; sourceTree = "<group>"; };
@@ -261,8 +261,8 @@
 				1F9D7742153515F000EF113A /* Category-Surf@2x.png */,
 				1F9D7743153515F000EF113A /* Category-Travel.png */,
 				1F9D7744153515F000EF113A /* Category-Travel@2x.png */,
-				1F9D7745153515F000EF113A /* Category-BB.png */,
-				1F9D7746153515F000EF113A /* Category-BB@2x.png */,
+				1F9D7745153515F000EF113A /* Category-Bb.png */,
+				1F9D7746153515F000EF113A /* Category-Bb@2x.png */,
 				1F9D7747153515F000EF113A /* Default.png */,
 				1F9D7748153515F000EF113A /* Default@2x.png */,
 				1F9D7749153515F000EF113A /* Icon-About.png */,
@@ -554,8 +554,8 @@
 				1F9D7762153515F000EF113A /* Category-Surf@2x.png in Resources */,
 				1F9D7763153515F000EF113A /* Category-Travel.png in Resources */,
 				1F9D7764153515F000EF113A /* Category-Travel@2x.png in Resources */,
-				1F9D7765153515F000EF113A /* Category-BB.png in Resources */,
-				1F9D7766153515F000EF113A /* Category-BB@2x.png in Resources */,
+				1F9D7765153515F000EF113A /* Category-Bb.png in Resources */,
+				1F9D7766153515F000EF113A /* Category-Bb@2x.png in Resources */,
 				1F9D7767153515F000EF113A /* Default.png in Resources */,
 				1F9D7768153515F000EF113A /* Default@2x.png in Resources */,
 				1F9D7769153515F000EF113A /* Icon-About.png in Resources */,

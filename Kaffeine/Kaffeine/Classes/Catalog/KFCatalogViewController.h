@@ -10,4 +10,6 @@
 
 @interface KFCatalogViewController : UIViewController
 
+- (void)tryReload;
+
 @end

@@ -14,6 +14,7 @@
 {
 @private
 	UIImage *_cachedImage;
+    UIImage *_cachedThumbnail;
 }
 @end
 
@@ -22,6 +23,31 @@
 @synthesize photoID = _photoID, product = _product;
 
 - (void) getThumbnailImageWithHandler:(void (^)(UIImage *image))handler
+{
+    // Return cached results
+	if(_cachedThumbnail)
+	{
+		handler(_cachedThumbnail);
+	}
+	else
+	{
+		// Load results asynchronously
+		NSURLRequest *request = [NSURLRequest requestWithURL:[KFURLHelper thumbnailURLForPhoto:self]];
+		AFImageRequestOperation *op = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image){
+			_cachedThumbnail = [image retain];
+			handler(_cachedThumbnail);
+		}];
+        
+        [op setAuthenticationChallengeBlock:^(NSURLConnection *connection, NSURLAuthenticationChallenge *challenge) {
+            [challenge.sender useCredential:[NSURLCredential credentialWithUser:@"onpunkt" password:@"lillymilo" persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
+        }];
+		
+		NSOperationQueue *queue = [[[NSOperationQueue alloc] init] autorelease];
+		[queue addOperation:op];
+	}
+}
+
+- (void) getPreviewImageWithHandler:(void (^)(UIImage *image))handler
 {	
 	// Return cached results
 	if(_cachedImage)
@@ -31,7 +57,7 @@
 	else
 	{
 		// Load results asynchronously
-		NSURLRequest *request = [NSURLRequest requestWithURL:[KFURLHelper thumbnailURLForPhoto:self]];
+		NSURLRequest *request = [NSURLRequest requestWithURL:[KFURLHelper previewURLForPhoto:self]];
 		AFImageRequestOperation *op = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image){
 			_cachedImage = [image retain];
 			handler(_cachedImage);
