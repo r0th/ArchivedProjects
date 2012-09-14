@@ -51,6 +51,9 @@
 		1F9D777B153515F000EF113A /* NavBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D775B153515F000EF113A /* NavBarBackground.png */; };
 		1F9D777C153515F000EF113A /* NavBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D775C153515F000EF113A /* NavBarBackground@2x.png */; };
 		1F9D777E15351BAD00EF113A /* Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9D777D15351BAC00EF113A /* Blank.png */; };
+		1FA7483D1603A71600997E9B /* Blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7483C1603A71600997E9B /* Blank@2x.png */; };
+		1FA748421603A8B800997E9B /* KFInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA748401603A8B800997E9B /* KFInfoViewController.m */; };
+		1FA748431603A8B800997E9B /* KFInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA748411603A8B800997E9B /* KFInfoViewController.xib */; };
 		1FCEF38A1536662B005E20AE /* TabBarButton-Deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEF3861536662B005E20AE /* TabBarButton-Deselected.png */; };
 		1FCEF38B1536662B005E20AE /* TabBarButton-Deselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEF3871536662B005E20AE /* TabBarButton-Deselected@2x.png */; };
 		1FCEF38C1536662B005E20AE /* TabBarButton-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEF3881536662B005E20AE /* TabBarButton-Selected.png */; };
@@ -142,6 +145,10 @@
 		1F9D775B153515F000EF113A /* NavBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarBackground.png; sourceTree = "<group>"; };
 		1F9D775C153515F000EF113A /* NavBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarBackground@2x.png"; sourceTree = "<group>"; };
 		1F9D777D15351BAC00EF113A /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
+		1FA7483C1603A71600997E9B /* Blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blank@2x.png"; sourceTree = "<group>"; };
+		1FA7483F1603A8B800997E9B /* KFInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KFInfoViewController.h; path = Classes/Catalog/KFInfoViewController.h; sourceTree = "<group>"; };
+		1FA748401603A8B800997E9B /* KFInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KFInfoViewController.m; path = Classes/Catalog/KFInfoViewController.m; sourceTree = "<group>"; };
+		1FA748411603A8B800997E9B /* KFInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KFInfoViewController.xib; path = Classes/Catalog/KFInfoViewController.xib; sourceTree = "<group>"; };
 		1FCEF3861536662B005E20AE /* TabBarButton-Deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarButton-Deselected.png"; sourceTree = "<group>"; };
 		1FCEF3871536662B005E20AE /* TabBarButton-Deselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarButton-Deselected@2x.png"; sourceTree = "<group>"; };
 		1FCEF3881536662B005E20AE /* TabBarButton-Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBarButton-Selected.png"; sourceTree = "<group>"; };
@@ -286,6 +293,7 @@
 				1F9D775B153515F000EF113A /* NavBarBackground.png */,
 				1F9D775C153515F000EF113A /* NavBarBackground@2x.png */,
 				1F9D777D15351BAC00EF113A /* Blank.png */,
+				1FA7483C1603A71600997E9B /* Blank@2x.png */,
 				1FCEF3861536662B005E20AE /* TabBarButton-Deselected.png */,
 				1FCEF3871536662B005E20AE /* TabBarButton-Deselected@2x.png */,
 				1FCEF3881536662B005E20AE /* TabBarButton-Selected.png */,
@@ -464,6 +472,9 @@
 				6EE587CC144F882E0003FF84 /* KFPhotoDetailViewController.h */,
 				6EE587CD144F882E0003FF84 /* KFPhotoDetailViewController.m */,
 				6EE587CE144F882E0003FF84 /* KFPhotoDetailViewController.xib */,
+				1FA7483F1603A8B800997E9B /* KFInfoViewController.h */,
+				1FA748401603A8B800997E9B /* KFInfoViewController.m */,
+				1FA748411603A8B800997E9B /* KFInfoViewController.xib */,
 			);
 			name = Catalog;
 			sourceTree = "<group>";
@@ -585,6 +596,8 @@
 				1FCEF38D1536662B005E20AE /* TabBarButton-Selected@2x.png in Resources */,
 				1F77E32D15E4477C0051EE72 /* Watermark.png in Resources */,
 				1F77E32E15E4477C0051EE72 /* Watermark@2x.png in Resources */,
+				1FA7483D1603A71600997E9B /* Blank@2x.png in Resources */,
+				1FA748431603A8B800997E9B /* KFInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +640,7 @@
 				1F90D6D2153651A000AF1CA8 /* KFFullscreenView.m in Sources */,
 				1FCEF39115366659005E20AE /* KFTabBarController.m in Sources */,
 				6E1B560E15E42BA800C7F62B /* KFPhotoDetailContainerViewController.m in Sources */,
+				1FA748421603A8B800997E9B /* KFInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

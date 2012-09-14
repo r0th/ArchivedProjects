@@ -13,6 +13,9 @@
 #import "UIFont+Custom.h"
 #import "KFPhotoGridViewController.h"
 #import "KFStoreManager.h"
+#import "KFInfoViewController.h"
+#import "KFAppDelegate.h"
+#import "KFRootViewController.h"
 
 @interface KFCatalogViewController ()
 {
@@ -32,9 +35,22 @@
 {
     self.view.backgroundColor = [UIColor clearColor];
     
+    BOOL hasSeenInfo = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasSeenInfo"];
+    if (!hasSeenInfo)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasSeenInfo"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self showInfo];
+    }
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icon-Back.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     [backButton release];
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icon-Info.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showInfo)];
+    self.navigationItem.leftBarButtonItem = infoButton;
+    [infoButton release];
     
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 	_scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -76,6 +92,16 @@
             [self refreshData];
 		}];
     }
+}
+
+- (void)showInfo
+{
+    KFAppDelegate *delegate = (KFAppDelegate *)[UIApplication sharedApplication].delegate;
+	KFRootViewController *root = (KFRootViewController *)delegate.window.rootViewController;
+    
+    KFInfoViewController *info = [[KFInfoViewController alloc] init];
+    [root presentModalViewController:info animated:YES];
+    [info release];
 }
 
 #pragma mark - Grid View
