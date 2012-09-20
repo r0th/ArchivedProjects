@@ -100,6 +100,7 @@
 	KFRootViewController *root = (KFRootViewController *)delegate.window.rootViewController;
     
     KFInfoViewController *info = [[KFInfoViewController alloc] init];
+    info.view.frame = [UIScreen mainScreen].applicationFrame;
     [root presentModalViewController:info animated:YES];
     [info release];
 }

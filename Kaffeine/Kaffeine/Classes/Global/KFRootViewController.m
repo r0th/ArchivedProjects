@@ -36,6 +36,8 @@
 - (void) viewDidLoad
 {
     UIImageView *backgroundTexture = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BackgroundTexture.png"]];
+    backgroundTexture.frame = self.view.bounds;
+    backgroundTexture.contentMode = UIViewContentModeScaleToFill;
     [self.view addSubview:backgroundTexture];
 	
 	_tabBarController = [[KFTabBarController alloc] init];
@@ -114,13 +116,15 @@
 
 - (void) showImage:(UIImage *)image fullscreenFromFrame:(CGRect)frame
 {
+    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height + 20;
+    
     self.view.userInteractionEnabled = NO;
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     // First just animate an image view
     _returningFrame = CGRectMake(frame.origin.x, frame.origin.y + 44, frame.size.width, frame.size.height);
-    CGRect finalFrame = CGRectMake(0, -20, 320, 480);
+    CGRect finalFrame = CGRectMake(0, -20, 320, appHeight);
     
     _fullscreenView = [[KFFullscreenView alloc] initWithFrame:finalFrame];
     _fullscreenView.image = image;
@@ -135,7 +139,7 @@
     
     [UIView animateWithDuration:0.3 animations:^
     {
-        _fullscreenView.frame = CGRectMake(0, -20, 320, 480);
+        _fullscreenView.frame = CGRectMake(0, -20, 320, appHeight);
         _fullscreenView.alpha = 1.0;
     }
                      completion:^(BOOL finished)

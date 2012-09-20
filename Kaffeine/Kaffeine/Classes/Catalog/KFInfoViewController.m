@@ -21,6 +21,8 @@
 - (void)viewDidLoad
 {
     UIImageView *backgroundTexture = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BackgroundTexture.png"]];
+    backgroundTexture.frame = CGRectMake(0, 0, 320, [UIScreen mainScreen].applicationFrame.size.height);
+    backgroundTexture.contentMode = UIViewContentModeScaleToFill;
     [self.view insertSubview:backgroundTexture atIndex:0];
     
     _textView.backgroundColor = [UIColor clearColor];

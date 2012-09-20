@@ -79,6 +79,8 @@
 
 - (void)tappedButton:(UIButton *)button
 {
+    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height;
+    
     if (button == _catalogButton && _currentViewController != _catalogNavController)
     {
         _catalogButton.selected = YES;
@@ -87,7 +89,7 @@
         
         [_currentViewController.view removeFromSuperview];
         _currentViewController = _catalogNavController;
-        _currentViewController.view.frame = CGRectMake(0, 0, 320, 416);
+        _currentViewController.view.frame = CGRectMake(0, 0, 320, appHeight - 44);
         [self.view insertSubview:_currentViewController.view atIndex:0];
     }
     else if (button == _libraryButton && _currentViewController != _libraryNavController)
@@ -98,7 +100,7 @@
         
         [_currentViewController.view removeFromSuperview];
         _currentViewController = _libraryNavController;
-        _currentViewController.view.frame = CGRectMake(0, 0, 320, 416);
+        _currentViewController.view.frame = CGRectMake(0, 0, 320, appHeight - 44);
         [self.view insertSubview:_currentViewController.view atIndex:0];
     }
     else if (button == _termsButton && _currentViewController != _termsViewController)
@@ -109,7 +111,7 @@
         
         [_currentViewController.view removeFromSuperview];
         _currentViewController = _termsViewController;
-        _currentViewController.view.frame = CGRectMake(0, 0, 320, 416);
+        _currentViewController.view.frame = CGRectMake(0, 0, 320, appHeight - 44);
         [self.view insertSubview:_currentViewController.view atIndex:0];
     }
 }

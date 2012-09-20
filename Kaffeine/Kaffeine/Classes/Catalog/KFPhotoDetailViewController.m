@@ -56,7 +56,8 @@
     _titleLabel.text = _photo.product.localizedTitle;
     _priceLabel.text = [NSString stringWithFormat:@"$%.2f", [_photo.product.price floatValue]];
     
-    CGSize descriptionSize = [_photo.product.localizedDescription sizeWithFont:_descriptionLabel.font constrainedToSize:_descriptionLabel.frame.size lineBreakMode:UILineBreakModeWordWrap];
+    BOOL largeLabel = [UIScreen mainScreen].applicationFrame.size.height > 460 ? YES : NO;
+    CGSize descriptionSize = [_photo.product.localizedDescription sizeWithFont:_descriptionLabel.font constrainedToSize:CGSizeMake(260, largeLabel ? 144 : 56) lineBreakMode:UILineBreakModeWordWrap];
     _descriptionLabel.frame = CGRectMake(_descriptionLabel.frame.origin.x, _descriptionLabel.frame.origin.y, descriptionSize.width, descriptionSize.height);
     _descriptionLabel.numberOfLines = 0;
     _descriptionLabel.text = _photo.product.localizedDescription;
